@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InMyCorner — Real athletes. Real advice. Real connections.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a class="logo" href="#">
+      <div class="logo-mark"></div>
+      In<em>My</em>Corner
+    </a>
+    <button class="nav-hamburger" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="closeNav()">For Kids</a></li>
+      <li><a href="#" onclick="closeNav()">For Athletes</a></li>
+      <li><a href="#how" onclick="closeNav()">How It Works</a></li>
+      <li><a href="#testimonials" onclick="closeNav()">Stories</a></li>
+      <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
+      <li><a href="#" class="nav-btn" onclick="closeNav()">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-panel"></div>
+    <div class="hero-wordmark">CHAMPION</div>
+
+    <div class="hero-content">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Now Matching Athletes &amp; Kids</div>
+
+      <h1>
+        <span class="outline">Real</span> Athletes.<br>
+        <span class="red">Real</span> Advice.<br>
+        Real Connections.
+      </h1>
+
+      <p class="tagline"><strong>Everyone needs someone in their corner.</strong></p>
+
+      <p class="sub">
+        We connect K–12 kids with collegiate and professional athletes through a penpal-style mentorship platform — matched by the sports they love.
+      </p>
+
+      <div class="sport-tags">
+        <span class="tag active">⚾ Baseball</span>
+        <span class="tag">🏀 Basketball</span>
+        <span class="tag">🏈 Football</span>
+        <span class="tag">⚽ Soccer</span>
+        <span class="tag">🏊 Swimming</span>
+        <span class="tag">+ More</span>
+      </div>
+
+      <div class="hero-ctas">
+        <button class="btn-primary">Sign Up Your Child</button>
+        <button class="btn-secondary">Volunteer as an Athlete</button>
+      </div>
+    </div>
+
+    <!-- Floating Cards -->
+    <div class="hero-cards">
+      <div class="match-toast">
+        <div class="toast-icon">🎉</div>
+        <div class="toast-text">New match! <span>Marcus (Age 10)</span> was paired with a college shortstop!</div>
+      </div>
+      <div class="athlete-card featured">
+        <div class="avatar av-a">JR</div>
+        <div class="card-info">
+          <div class="card-name">Jordan Rivera</div>
+          <div class="card-sport">College Baseball · OF</div>
+        </div>
+        <span class="card-badge badge-matched">Matched</span>
+      </div>
+      <div class="athlete-card">
+        <div class="avatar av-b">TW</div>
+        <div class="card-info">
+          <div class="card-name">Taylor Wu</div>
+          <div class="card-sport">Pro Soccer · Midfielder</div>
+        </div>
+        <span class="card-badge badge-new">New</span>
+      </div>
+      <div class="athlete-card">
+        <div class="avatar av-c">SA</div>
+        <div class="card-info">
+          <div class="card-name">Sam Alvarez</div>
+          <div class="card-sport">College Basketball · PG</div>
+        </div>
+        <span class="card-badge badge-open">Open</span>
+      </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat"><div class="stat-num">1,200+</div><div class="stat-label">Athletes Volunteering</div></div>
+      <div class="stat-div"></div>
+      <div class="stat"><div class="stat-num">8,400+</div><div class="stat-label">Kids Connected</div></div>
+      <div class="stat-div"></div>
+      <div class="stat"><div class="stat-num">24+</div><div class="stat-label">Sports Covered</div></div>
+      <div class="stat-div"></div>
+      <div class="stat"><div class="stat-num">50</div><div class="stat-label">States &amp; Growing</div></div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="how" id="how">
+    <div class="how-bg-num" id="bgNum">1</div>
+
+    <div class="how-header">
+      <div class="section-eyebrow">How It Works</div>
+      <h2>Simple Steps.<br><span>Big Impact.</span></h2>
+      <p>From sign-up to first message, we handle the matching so you can focus on the connection.</p>
+    </div>
+
+    <div class="steps" id="stepsGrid">
+
+      <div class="step" data-step="1">
+        <div class="step-num-wrap">
+          <div class="step-circle">01<div class="step-icon">👨‍👩‍👧</div></div>
+        </div>
+        <div class="step-label">Step One</div>
+        <h3>Parent Creates a Profile</h3>
+        <p>Parents sign up and build a safe profile for their child — sharing their age, grade, and the sports they love most.</p>
+        <span class="step-for">👨‍👩‍👧 For Parents</span>
+      </div>
+
+      <div class="connector">
+        <svg viewBox="0 0 40 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 6 H32 M28 1 L38 6 L28 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="step" data-step="2">
+        <div class="step-num-wrap">
+          <div class="step-circle">02<div class="step-icon">🏅</div></div>
+        </div>
+        <div class="step-label">Step Two</div>
+        <h3>Athletes Sign Up to Volunteer</h3>
+        <p>Collegiate and professional athletes create a profile, choose their sport, and commit a small amount of time to inspire a kid.</p>
+        <span class="step-for">🏅 For Athletes</span>
+      </div>
+
+      <div class="connector">
+        <svg viewBox="0 0 40 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 6 H32 M28 1 L38 6 L28 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="step" data-step="3">
+        <div class="step-num-wrap">
+          <div class="step-circle">03<div class="step-icon">🤝</div></div>
+        </div>
+        <div class="step-label">Step Three</div>
+        <h3>We Make the Perfect Match</h3>
+        <p>Our platform pairs each kid with an athlete who plays the sport they're passionate about — creating instant common ground.</p>
+        <span class="step-for both">✨ By InMyCorner</span>
+      </div>
+
+      <div class="connector">
+        <svg viewBox="0 0 40 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 6 H32 M28 1 L38 6 L28 11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="step" data-step="4">
+        <div class="step-num-wrap">
+          <div class="step-circle">04<div class="step-icon">✉️</div></div>
+        </div>
+        <div class="step-label">Step Four</div>
+        <h3>Start Writing. Start Connecting.</h3>
+        <p>Kids and athletes exchange messages through our safe, monitored platform — advice, encouragement, and friendship, one letter at a time.</p>
+        <span class="step-for both">🌟 For Everyone</span>
+      </div>
+
+    </div>
+
+    <div class="how-cta">
+      <div class="how-cta-inner">
+        <p>Ready to get started?</p>
+        <h3>Put Someone <span>In Their Corner</span> Today</h3>
+        <div class="cta-pair">
+          <button class="btn-primary">Sign Up Your Child</button>
+          <button class="btn-secondary">Volunteer as an Athlete</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-header">
+      <div class="section-eyebrow">Real Stories</div>
+      <h2>Hear From Our <span>Community</span></h2>
+      <p>Parents, kids, and athletes sharing what InMyCorner means to them.</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="t-card featured">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">My son used to be so shy about baseball. After two months of letters with his penpal — a college pitcher — he shows up to practice like he owns the field. The confidence boost has been unreal.</p>
+        <div class="t-person">
+          <div class="t-avatar ta-1">DM</div>
+          <div class="t-info">
+            <div class="t-name">Diane M.</div>
+            <div class="t-role">Parent · Son, Age 11 · Baseball</div>
+          </div>
+          <span class="t-badge">Parent</span>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">I signed up thinking I'd write a few encouraging notes. Eight months later, this kid has become one of my biggest motivators. When I'm struggling at practice, I think about the letters I get from him.</p>
+        <div class="t-person">
+          <div class="t-avatar ta-2">RJ</div>
+          <div class="t-info">
+            <div class="t-name">Rasheed J.</div>
+            <div class="t-role">College Basketball · Guard · Junior</div>
+          </div>
+          <span class="t-badge">Athlete</span>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">My daughter got matched with a pro soccer player and now she wants to train twice as hard. She reads every letter out loud at dinner. It's the highlight of her week — and honestly, ours too.</p>
+        <div class="t-person">
+          <div class="t-avatar ta-3">KL</div>
+          <div class="t-info">
+            <div class="t-name">Karen L.</div>
+            <div class="t-role">Parent · Daughter, Age 9 · Soccer</div>
+          </div>
+          <span class="t-badge">Parent</span>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">As a pro athlete you get so focused on your own career. This program reminded me why I fell in love with the sport in the first place. The questions these kids ask — they're pure and real. It keeps me grounded.</p>
+        <div class="t-person">
+          <div class="t-avatar ta-4">MT</div>
+          <div class="t-info">
+            <div class="t-name">Marcus T.</div>
+            <div class="t-role">Pro Baseball · Outfielder</div>
+          </div>
+          <span class="t-badge">Athlete</span>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">My son has ADHD and struggles to connect. His penpal athlete writes in a way that just clicks with him. The platform is safe, the matching was spot-on, and the support from InMyCorner has been incredible.</p>
+        <div class="t-person">
+          <div class="t-avatar ta-5">SP</div>
+          <div class="t-info">
+            <div class="t-name">Sandra P.</div>
+            <div class="t-role">Parent · Son, Age 13 · Football</div>
+          </div>
+          <span class="t-badge">Parent</span>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">I was nervous about the time commitment, but honestly? Writing one letter every couple weeks is nothing. And what I get back — the excitement, the questions, the drawings — it's the most rewarding thing I do off the court.</p>
+        <div class="t-person">
+          <div class="t-avatar ta-6">AW</div>
+          <div class="t-info">
+            <div class="t-name">Alexis W.</div>
+            <div class="t-role">College Volleyball · Setter · Senior</div>
+          </div>
+          <span class="t-badge">Athlete</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq" id="faq">
+    <div class="faq-bg-text">FAQ</div>
+
+    <div class="faq-inner">
+
+      <div class="faq-left">
+        <div class="section-eyebrow">Got Questions?</div>
+        <h2>We've Got <span>Answers.</span></h2>
+        <p>Everything you need to know about InMyCorner — for parents, kids, and athlete volunteers.</p>
+        <a href="#" class="faq-contact">Still have questions? Contact us →</a>
+      </div>
+
+      <div class="faq-right">
+        <div class="faq-tabs">
+          <button class="faq-tab active" data-filter="all">All</button>
+          <button class="faq-tab" data-filter="parents">Parents</button>
+          <button class="faq-tab" data-filter="athletes">Athletes</button>
+          <button class="faq-tab" data-filter="safety">Safety</button>
+        </div>
+
+        <div class="faq-list" id="faqList">
+
+          <div class="faq-item" data-cat="parents">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">How does the matching process work?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>After a parent creates a profile for their child — including their age, grade, and favorite sports — our platform matches them with a verified athlete volunteer who plays the same sport. We consider age-appropriateness and availability to make the best possible pairing.</p></div>
+          </div>
+
+          <div class="faq-item" data-cat="parents">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">Is InMyCorner free for families?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>Yes! Signing up and connecting your child with an athlete penpal is completely free for families. We believe every kid deserves access to a mentor regardless of financial situation.</p></div>
+          </div>
+
+          <div class="faq-item" data-cat="parents">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">Can I see the messages my child exchanges?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>Absolutely. Parents have full visibility into all conversations. You can read every message exchanged between your child and their athlete penpal at any time through the parent dashboard. Transparency is a core part of how we operate.</p></div>
+          </div>
+
+          <div class="faq-item" data-cat="athletes">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">How much time does volunteering require?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>We designed this with busy athletes in mind. Most penpals exchange messages once every one to two weeks. There's no strict requirement — you set your own pace. Even a short, thoughtful message can make a huge difference in a kid's week.</p></div>
+          </div>
+
+          <div class="faq-item" data-cat="athletes">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">Who is eligible to volunteer as an athlete?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>Any active collegiate (D1, D2, D3, NAIA, NJCAA) or professional athlete in any sport can apply. All volunteers go through a brief screening and background check process before being matched with a child.</p></div>
+          </div>
+
+          <div class="faq-item" data-cat="safety">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">How do you keep kids safe on the platform?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>Safety is our top priority. All athlete volunteers are background checked before joining. All messages are sent through our monitored platform — no personal contact info is ever exchanged. Parents can view all messages at any time, and our moderation team reviews flagged content within 24 hours.</p></div>
+          </div>
+
+          <div class="faq-item" data-cat="safety">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">What happens if a match isn't working out?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>No problem at all. Parents or athletes can request a rematch at any time, no questions asked. We want every connection to feel natural and positive — we'll work to find a better fit as quickly as possible.</p></div>
+          </div>
+
+          <div class="faq-item" data-cat="parents">
+            <div class="faq-q-row">
+              <div class="faq-q-left"><div class="faq-cat-dot"></div><div class="faq-q">What sports are currently available for matching?</div></div>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer"><p>We currently support over 24 sports including baseball, basketball, football, soccer, swimming, volleyball, track &amp; field, softball, tennis, golf, wrestling, gymnastics, and more. If your child's sport isn't listed yet, join our waitlist and we'll notify you when it's available.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo">
+      <div class="footer-logo-mark"></div>
+      In<em>My</em>Corner
+    </div>
+    <span class="footer-copy">© 2026 InMyCorner. All rights reserved.</span>
+    <ul class="footer-links">
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Safety</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
