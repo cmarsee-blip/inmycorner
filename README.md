@@ -8,10 +8,10 @@ A mentorship platform connecting K–12 kids with collegiate and professional at
 
 ## Brand Colors
 
-| Color | HEX | RGB |
-|-------|-----|-----|
-| Red   | `#C6011F` | `rgb(198, 1, 31)` |
-| Black | `#000000` | `rgb(0, 0, 0)` |
+| Color | HEX       | RGB                  |
+| ----- | --------- | -------------------- |
+| Red   | `#C6011F` | `rgb(198, 1, 31)`    |
+| Black | `#000000` | `rgb(0, 0, 0)`       |
 | White | `#FFFFFF` | `rgb(255, 255, 255)` |
 
 ---
@@ -43,25 +43,25 @@ inmycorner/
 
 ## Sections
 
-| Section | Description |
-|---------|-------------|
-| **Nav** | Fixed navigation with hamburger menu on mobile |
-| **Hero** | Full-screen hero with floating athlete cards and stats |
-| **How It Works** | 4-step process with scroll-triggered animations |
-| **Testimonials** | 6 community testimonials in a responsive grid |
-| **FAQ** | Filterable accordion FAQ (Parents / Athletes / Safety) |
-| **Footer** | Simple footer with brand and links |
+| Section          | Description                                            |
+| ---------------- | ------------------------------------------------------ |
+| **Nav**          | Fixed navigation with hamburger menu on mobile         |
+| **Hero**         | Full-screen hero with floating athlete cards and stats |
+| **How It Works** | 4-step process with scroll-triggered animations        |
+| **Testimonials** | 6 community testimonials in a responsive grid          |
+| **FAQ**          | Filterable accordion FAQ (Parents / Athletes / Safety) |
+| **Footer**       | Simple footer with brand and links                     |
 
 ---
 
 ## Responsive Breakpoints
 
-| Breakpoint | Width |
-|------------|-------|
-| Desktop    | > 1024px |
-| Tablet     | ≤ 1024px |
-| Mobile     | ≤ 768px |
-| Small Mobile | ≤ 480px |
+| Breakpoint   | Width    |
+| ------------ | -------- |
+| Desktop      | > 1024px |
+| Tablet       | ≤ 1024px |
+| Mobile       | ≤ 768px  |
+| Small Mobile | ≤ 480px  |
 
 ---
 
@@ -72,4 +72,4 @@ inmycorner/
 
 ---
 
-*Mockup created for InMyCorner, 2026.*
+_Mockup created for InMyCorner, 2026._
