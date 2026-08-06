@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
     <!-- ── NAV ── -->
@@ -29,7 +30,7 @@
         <li><a href="#testimonials" onclick="closeNav()">Stories</a></li>
         <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
         <li>
-          <a href="#" class="nav-btn" onclick="closeNav()">Get Started</a>
+          <a href="#" class="nav-btn" onclick="closeNav(); openModal('chooser')">Get Started</a>
         </li>
       </ul>
     </nav>
@@ -70,8 +71,8 @@
         </div>
 
         <div class="hero-ctas">
-          <button class="btn-primary">Sign Up Your Child</button>
-          <button class="btn-secondary">Volunteer as an Athlete</button>
+          <button class="btn-primary" onclick="openModal('family')">Sign Up Your Child</button>
+          <button class="btn-secondary" onclick="openModal('mentor')">Volunteer as an Athlete</button>
         </div>
       </div>
 
@@ -594,6 +595,134 @@
       </ul>
     </footer>
 
+    <!-- ── SIGNUP MODAL ── -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box">
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          &times;
+        </button>
+
+        <!-- Chooser (shown when opened from "Get Started") -->
+        <div class="modal-panel" id="panelChooser">
+          <h3>Who's signing up?</h3>
+          <p class="modal-sub">Choose the option that fits you.</p>
+          <div class="modal-choice-row">
+            <button class="modal-choice" data-open="family">
+              <span class="modal-choice-icon">👨‍👩‍👧</span>
+              <span>I'm a parent</span>
+            </button>
+            <button class="modal-choice" data-open="mentor">
+              <span class="modal-choice-icon">🏅</span>
+              <span>I'm an athlete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Parent / Athlete (child) signup -->
+        <div class="modal-panel" id="panelFamily" hidden>
+          <h3>Sign Up Your Child</h3>
+          <p class="modal-sub">
+            Create a safe profile — we'll match your child with a
+            background-checked athlete mentor.
+          </p>
+          <form id="familyForm">
+            <label>Your email
+              <input type="email" name="parent_email" required />
+            </label>
+            <label>Your name
+              <input type="text" name="parent_name" required />
+            </label>
+            <label>Password
+              <input type="password" name="password" minlength="6" required />
+            </label>
+            <label>Child's name
+              <input type="text" name="athlete_name" required />
+            </label>
+            <label>Child's age
+              <input type="number" name="athlete_age" min="5" max="18" required />
+            </label>
+            <label>Child's grade
+              <input type="text" name="athlete_grade" placeholder="e.g. 6th grade" />
+            </label>
+            <label>Primary sport
+              <select name="sport" required>
+                <option value="">Select a sport</option>
+                <option>Baseball</option>
+                <option>Basketball</option>
+                <option>Football</option>
+                <option>Soccer</option>
+                <option>Swimming</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <button type="submit" class="btn-primary modal-submit">
+              Create Profile
+            </button>
+            <p class="modal-error" id="familyError" hidden></p>
+          </form>
+        </div>
+
+        <!-- Athlete mentor signup -->
+        <div class="modal-panel" id="panelMentor" hidden>
+          <h3>Volunteer as an Athlete</h3>
+          <p class="modal-sub">
+            All mentors complete a background check before being matched
+            with a child.
+          </p>
+          <form id="mentorForm">
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Full name
+              <input type="text" name="full_name" required />
+            </label>
+            <label>Password
+              <input type="password" name="password" minlength="6" required />
+            </label>
+            <label>Sport
+              <select name="sport" required>
+                <option value="">Select a sport</option>
+                <option>Baseball</option>
+                <option>Basketball</option>
+                <option>Football</option>
+                <option>Soccer</option>
+                <option>Swimming</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>Level
+              <select name="level" required>
+                <option value="">Select a level</option>
+                <option value="college">Collegiate</option>
+                <option value="professional">Professional</option>
+              </select>
+            </label>
+            <label>Team / School
+              <input type="text" name="team_or_school" />
+            </label>
+            <label>Short bio
+              <textarea name="bio" rows="3"></textarea>
+            </label>
+            <button type="submit" class="btn-primary modal-submit">
+              Apply to Volunteer
+            </button>
+            <p class="modal-error" id="mentorError" hidden></p>
+          </form>
+        </div>
+
+        <!-- Success state -->
+        <div class="modal-panel" id="panelSuccess" hidden>
+          <div class="modal-success-icon">✓</div>
+          <h3>You're in!</h3>
+          <p class="modal-sub" id="successMsg">
+            Check your email to confirm your account.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
