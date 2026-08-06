@@ -61,36 +61,36 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.textContent = "Creating profile...";
 
     try {
-      // 1. Create the auth user
-      const { data: authData, error: authError } =
-        await supabaseClient.auth.signUp({
-          email: fd.get("parent_email"),
-          password: fd.get("password"),
-        });
+      // Create the auth user. The profile row in `families` is created
+      // automatically by a database trigger (see supabase-schema.sql),
+      // using the metadata passed in `options.data` below — this works
+      // whether or not email confirmation is required.
+      const { error: authError } = await supabaseClient.auth.signUp({
+        email: fd.get("parent_email"),
+        password: fd.get("password"),
+        options: {
+          data: {
+            signup_type: "family",
+            parent_name: fd.get("parent_name"),
+            athlete_name: fd.get("athlete_name"),
+            athlete_age: fd.get("athlete_age"),
+            athlete_grade: fd.get("athlete_grade") || "",
+            sport: fd.get("sport"),
+          },
+        },
+      });
 
       if (authError) throw authError;
-
-      // 2. Insert the family/athlete profile row, linked to that user
-      const { error: insertError } = await supabaseClient
-        .from("families")
-        .insert({
-          id: authData.user.id,
-          parent_name: fd.get("parent_name"),
-          parent_email: fd.get("parent_email"),
-          athlete_name: fd.get("athlete_name"),
-          athlete_age: Number(fd.get("athlete_age")),
-          athlete_grade: fd.get("athlete_grade") || null,
-          sport: fd.get("sport"),
-        });
-
-      if (insertError) throw insertError;
 
       document.getElementById("successMsg").textContent =
         "Check your email to confirm your account, then we'll start matching your child with a mentor.";
       showPanel("success");
       familyForm.reset();
     } catch (err) {
-      showError(familyError, err.message || "Something went wrong. Please try again.");
+      showError(
+        familyError,
+        err.message || "Something went wrong. Please try again.",
+      );
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Create Profile";
@@ -113,39 +113,34 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.textContent = "Submitting...";
 
     try {
-      // 1. Create the auth user
-      const { data: authData, error: authError } =
-        await supabaseClient.auth.signUp({
-          email: fd.get("email"),
-          password: fd.get("password"),
-        });
+      // Create the auth user. The profile row in `mentors` is created
+      // automatically by a database trigger (see supabase-schema.sql).
+      const { error: authError } = await supabaseClient.auth.signUp({
+        email: fd.get("email"),
+        password: fd.get("password"),
+        options: {
+          data: {
+            signup_type: "mentor",
+            full_name: fd.get("full_name"),
+            sport: fd.get("sport"),
+            level: fd.get("level"),
+            team_or_school: fd.get("team_or_school") || "",
+            bio: fd.get("bio") || "",
+          },
+        },
+      });
 
       if (authError) throw authError;
-
-      // 2. Insert the mentor profile row. background_check_status
-      //    defaults to 'pending' — a mentor is NOT matchable until
-      //    that's updated to 'cleared' (done server-side after the
-      //    background check API call completes).
-      const { error: insertError } = await supabaseClient
-        .from("mentors")
-        .insert({
-          id: authData.user.id,
-          full_name: fd.get("full_name"),
-          email: fd.get("email"),
-          sport: fd.get("sport"),
-          level: fd.get("level"),
-          team_or_school: fd.get("team_or_school") || null,
-          bio: fd.get("bio") || null,
-        });
-
-      if (insertError) throw insertError;
 
       document.getElementById("successMsg").textContent =
         "Check your email to confirm your account. We'll email you next steps for your background check before you're matched.";
       showPanel("success");
       mentorForm.reset();
     } catch (err) {
-      showError(mentorError, err.message || "Something went wrong. Please try again.");
+      showError(
+        mentorError,
+        err.message || "Something went wrong. Please try again.",
+      );
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Apply to Volunteer";

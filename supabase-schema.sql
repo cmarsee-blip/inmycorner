@@ -89,3 +89,52 @@ create policy "Participants can view their matches"
 -- happen server-side (e.g. a Supabase Edge Function) only after a
 -- mentor's background_check_status = 'cleared'. No insert policy is
 -- defined here on purpose, so only a service-role key can create matches.
+
+-- ============================================================
+-- AUTO-CREATE PROFILE ROW ON SIGNUP
+-- Runs as a trusted database function the instant a new auth
+-- user is created — regardless of email confirmation status.
+-- This removes the need for the browser to have an active
+-- session at insert time, which avoids RLS/timing issues.
+-- The signup form must pass this data via signUp()'s
+-- `options.data` (user metadata), not a separate insert call.
+-- ============================================================
+
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  if new.raw_user_meta_data->>'signup_type' = 'family' then
+    insert into public.families (id, parent_name, parent_email, athlete_name, athlete_age, athlete_grade, sport)
+    values (
+      new.id,
+      new.raw_user_meta_data->>'parent_name',
+      new.email,
+      new.raw_user_meta_data->>'athlete_name',
+      nullif(new.raw_user_meta_data->>'athlete_age', '')::int,
+      new.raw_user_meta_data->>'athlete_grade',
+      new.raw_user_meta_data->>'sport'
+    );
+  elsif new.raw_user_meta_data->>'signup_type' = 'mentor' then
+    insert into public.mentors (id, full_name, email, sport, level, team_or_school, bio)
+    values (
+      new.id,
+      new.raw_user_meta_data->>'full_name',
+      new.email,
+      new.raw_user_meta_data->>'sport',
+      new.raw_user_meta_data->>'level',
+      new.raw_user_meta_data->>'team_or_school',
+      new.raw_user_meta_data->>'bio'
+    );
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists on_auth_user_created on auth.users;
+
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute function public.handle_new_user();
