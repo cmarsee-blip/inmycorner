@@ -53,6 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   familyForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (location.hostname.endsWith("github.io")) {
+      showError(
+        familyError,
+        "This is a portfolio demo. Sign-ups are turned off, so please don't enter real information.",
+      );
+      return;
+    }
     familyError.hidden = true;
 
     const fd = new FormData(familyForm);
@@ -105,6 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mentorForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (location.hostname.endsWith("github.io")) {
+      showError(
+        mentorError,
+        "This is a portfolio demo. Sign-ups are turned off, so please don't enter real information.",
+      );
+      return;
+    }
     mentorError.hidden = true;
 
     const fd = new FormData(mentorForm);
