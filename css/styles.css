@@ -1740,3 +1740,46 @@ footer {
   background: #c6011f;
   border-radius: 6px;
 }
+
+.info-body {
+  margin: 0;
+  background: #000;
+}
+
+.info-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.7;
+}
+
+.info-page h1,
+.info-page h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.info-page h1 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+.info-page h2 {
+  margin: 2.5rem 0 0.5rem;
+  font-size: 2rem;
+  color: #fff;
+  border-bottom: 2px solid #c6011f;
+  padding-bottom: 0.25rem;
+}
+
+.info-page a {
+  color: #ff5a6e;
+}
+
+.info-back {
+  font-weight: 700;
+  text-decoration: none;
+}
