@@ -34,6 +34,11 @@ front end, and to wire up real sign-up flows for two kinds of users.
 - Safeguards suited to a site about kids: sign-ups are turned off on the
   public demo, and every form says not to enter real information.
 
+**What I'd do next**
+
+- Allow signups, parent approval needed.
+- Bring the site public to a server.
+
 ## Screenshots
 
 **Home**
