@@ -1644,7 +1644,9 @@ footer {
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .modal-choice:hover {
@@ -1727,4 +1729,14 @@ footer {
 
 #panelSuccess {
   text-align: center;
+}
+
+.demo-note {
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #fff;
+  background: #c6011f;
+  border-radius: 6px;
 }
