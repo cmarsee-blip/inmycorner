@@ -13,6 +13,25 @@ Supabase.
 > information. To try the sign-up flow, run the site locally against your own
 > Supabase project (see below).
 
+## Why I built this 
+
+I came up through sports as a player, a coach and a facility manager, and I'm
+a father of four boys. InMyCorner started from the idea that a kid can get a
+lot out of hearing from an athlete they look up to, and that a penpal-style
+setup could make that safe and easy for families. I built it as a concept
+project to practice turning a product idea into a polished, responsive
+front end, and to wire up real sign-up flows for two kinds of users.
+
+**What I built**
+
+- A responsive site with no framework: a mobile nav, a hero with sample
+  athlete cards, a scroll-animated "How it works," a testimonials grid and a
+  filterable FAQ for parents, athletes and safety.
+- Separate sign-up flows for families and mentors on Supabase Auth, with a
+  database trigger that creates each person's profile row.
+- Safeguards suited to a site about kids: sign-ups are turned off on the
+  public demo, and every form says not to enter real information.
+
 ## Screenshots
 
 **Home**
