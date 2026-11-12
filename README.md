@@ -13,7 +13,9 @@ Supabase.
 > information. To try the sign-up flow, run the site locally against your own
 > Supabase project (see below).
 
-## Why I built this 
+## What I built & why
+
+**Why**
 
 I came up through sports as a player, a coach and a facility manager, and I'm
 a father of four boys. InMyCorner started from the idea that a kid can get a
